@@ -2,8 +2,8 @@ package test.study.bytecode.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import org.junit.Test;
-import study.bytecode.cglib.HelloImpl;
-import study.bytecode.cglib.HelloMethodInterceptor;
+import study.bytecode.cglib.proxy.HelloImpl;
+import study.bytecode.cglib.proxy.HelloMethodInterceptor;
 
 public class HelloTest {
 
