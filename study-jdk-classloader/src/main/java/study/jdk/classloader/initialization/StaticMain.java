@@ -34,7 +34,6 @@ public class StaticMain {
 //        String id = StaticMain.ID;
         //invokestatic
         StaticMain.sayHi();
-
     }
 }
 

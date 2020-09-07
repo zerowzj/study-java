@@ -12,5 +12,4 @@ public class Father {
     public Father() {
         log.info(">>>>>> Father constructor");
     }
-
 }
