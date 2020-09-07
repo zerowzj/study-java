@@ -1,9 +1,8 @@
-package study.jdk.jvm.object;
+package study.jvm.object;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
-import org.openjdk.jol.info.FieldLayout;
 
 @Slf4j
 public class ObjectHeaderTest {

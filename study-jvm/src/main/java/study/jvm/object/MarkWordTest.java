@@ -1,4 +1,4 @@
-package study.jdk.jvm.object;
+package study.jvm.object;
 
 public class MarkWordTest {
 }

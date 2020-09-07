@@ -1,4 +1,4 @@
-package study.jdk.jvm.memory;
+package study.jvm.memory;
 
 import org.junit.Test;
 
