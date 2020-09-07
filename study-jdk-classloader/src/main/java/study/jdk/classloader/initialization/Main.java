@@ -6,11 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
 
     static {
-        log.info(">>>>>> main init");
+        log.info(">>>>>> Main init");
     }
 
     public Main(){
-        log.info(">>>>>> main constructor");
+        log.info(">>>>>> Main constructor");
     }
 
     public static void main(String[] args) {

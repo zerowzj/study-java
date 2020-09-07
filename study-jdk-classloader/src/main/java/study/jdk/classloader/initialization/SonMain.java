@@ -6,11 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 public class SonMain extends Father {
 
     static {
-        log.info(">>>>>> son init");
+        log.info(">>>>>> Son init");
     }
 
     public SonMain() {
-        log.info(">>>>>> son constructor");
+        log.info(">>>>>> Son constructor");
     }
 
     public static void main(String[] args) {

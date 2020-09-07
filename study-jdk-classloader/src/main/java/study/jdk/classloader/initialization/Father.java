@@ -6,11 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 public class Father {
 
     static {
-        log.info(">>>>>> father init");
+        log.info(">>>>>> Father init");
     }
 
     public Father() {
-        log.info(">>>>>> father constructor");
+        log.info(">>>>>> Father constructor");
     }
 
 }
