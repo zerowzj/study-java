@@ -1,4 +1,4 @@
-package study.jdk.classload.loading;
+package study.jdk.classloading.loading;
 
 import lombok.extern.slf4j.Slf4j;
 
