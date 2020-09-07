@@ -1,4 +1,4 @@
-package study.jdk.classloader.initialization;
+package study.jdk.classload.initialization;
 
 import lombok.extern.slf4j.Slf4j;
 
