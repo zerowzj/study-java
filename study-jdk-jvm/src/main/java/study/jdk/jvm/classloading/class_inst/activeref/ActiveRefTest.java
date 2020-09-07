@@ -7,7 +7,7 @@ import org.junit.Test;
 public class ActiveRefTest {
 
     static {
-        log.info("ActiveRefTest static init");
+        log.info("ActiveRefTest static initialization");
     }
 
 

@@ -8,7 +8,7 @@ public class Father {
     static String name;
 
     static {
-        log.info("Father static init");
+        log.info("Father static initialization");
     }
 
     public static void sayHi() {

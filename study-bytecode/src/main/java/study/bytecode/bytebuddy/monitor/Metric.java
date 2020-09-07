@@ -15,7 +15,7 @@ public class Metric {
         MemoryMXBean memory = ManagementFactory.getMemoryMXBean();
         MemoryUsage headMemory = memory.getHeapMemoryUsage();
 
-        String info = String.format("\ninit: %s\t max: %s\t used: %s\t committed: %s\t use rate: %s\n",
+        String info = String.format("\ninitialization: %s\t max: %s\t used: %s\t committed: %s\t use rate: %s\n",
                 headMemory.getInit() / MB + "MB",
                 headMemory.getMax() / MB + "MB", headMemory.getUsed() / MB + "MB",
                 headMemory.getCommitted() / MB + "MB",
@@ -27,7 +27,7 @@ public class Metric {
 
         MemoryUsage nonheadMemory = memory.getNonHeapMemoryUsage();
 
-        info = String.format("init: %s\t max: %s\t used: %s\t committed: %s\t use rate: %s\n",
+        info = String.format("initialization: %s\t max: %s\t used: %s\t committed: %s\t use rate: %s\n",
                 nonheadMemory.getInit() / MB + "MB",
                 nonheadMemory.getMax() / MB + "MB", nonheadMemory.getUsed() / MB + "MB",
                 nonheadMemory.getCommitted() / MB + "MB",

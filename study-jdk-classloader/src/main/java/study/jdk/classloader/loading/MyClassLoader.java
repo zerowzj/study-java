@@ -1,8 +1,9 @@
-package study.jdk.classloader;
+package study.jdk.classloader.loading;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,5 +42,10 @@ public class MyClassLoader extends ClassLoader {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    private String classNameToPath(String className) {
+        return rootDir + File.separatorChar
+                + className.replace('.', File.separatorChar) + ".class";
     }
 }
