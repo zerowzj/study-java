@@ -31,9 +31,9 @@ public class StaticMain {
 
        //getstatic
 //       int age = StaticMain.age;
-//        String id = StaticMain.ID;
+        String id = StaticMain.ID;
         //invokestatic
-        StaticMain.sayHi();
+//        StaticMain.sayHi();
     }
 }
 
