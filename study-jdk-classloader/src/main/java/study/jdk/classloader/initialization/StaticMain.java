@@ -12,7 +12,6 @@ public class StaticMain {
 
     public static int age;
 
-
     static {
         log.info(">>>>>> StaticMain init");
     }
