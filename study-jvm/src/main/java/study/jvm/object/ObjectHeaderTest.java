@@ -10,14 +10,16 @@ public class ObjectHeaderTest {
     @Test
     public void obj_test() {
         Obj obj = new Obj();
-        String str = ClassLayout.parseInstance("ABC").toPrintable();
+        String str = ClassLayout.parseInstance(obj)
+                .toPrintable();
         log.info(str);
     }
 
     @Test
     public void array_test() {
         Obj[] array = new Obj[]{new Obj(), new Obj(), new Obj()};
-        String str = ClassLayout.parseInstance(array).toPrintable();
+        String str = ClassLayout.parseInstance(array)
+                .toPrintable();
         log.info(str);
     }
 }
