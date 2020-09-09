@@ -14,6 +14,8 @@ public class StaticTest {
     @Test
     public void getstatic_test() {
         //       int age = Const.age;
+
+        //被final修饰，已在编译期把结果放入常量池的静态字段不触发初始化
         String id = Const.ID;
     }
 
