@@ -11,10 +11,15 @@ import java.io.InputStream;
 @Slf4j
 public class MyClassLoader extends ClassLoader {
 
-    private String rootDir;
+    private String classpath;
 
-    public MyClassLoader(String rootDir) {
-        this.rootDir = rootDir;
+    public MyClassLoader(String classpath) {
+        this.classpath = classpath;
+    }
+
+    @Override
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
+        return super.findClass(name);
     }
 
     @Override
@@ -28,24 +33,23 @@ public class MyClassLoader extends ClassLoader {
 
     private byte[] getClassData(String className) {
         String path = classNameToPath(className);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             InputStream ins = new FileInputStream(path);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
             int bufferSize = 4096;
             byte[] buffer = new byte[bufferSize];
             int bytesNumRead = 0;
             while ((bytesNumRead = ins.read(buffer)) != -1) {
                 baos.write(buffer, 0, bytesNumRead);
             }
-            return baos.toByteArray();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return null;
+        return baos.toByteArray();
     }
 
     private String classNameToPath(String className) {
-        return rootDir + File.separatorChar
-                + className.replace('.', File.separatorChar) + ".class";
+        return "" + File.separatorChar+ className.replace('.', File.separatorChar) + ".class";
     }
 }

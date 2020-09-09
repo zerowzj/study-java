@@ -18,8 +18,7 @@ public class ObjectHeaderTest {
     @Test
     public void array_test() {
         Obj[] array = new Obj[]{new Obj(), new Obj(), new Obj()};
-        String str = ClassLayout.parseInstance(array)
-                .toPrintable();
+        String str = ClassLayout.parseInstance(array).toPrintable();
         log.info(str);
     }
 }
