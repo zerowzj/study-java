@@ -1,4 +1,4 @@
-package test.study.jvm.classloading;
+package study.jvm.classloading.loading;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

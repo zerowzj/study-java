@@ -1,4 +1,4 @@
-package test.study.jvm.classloading;
+package study.jvm.classloading.loading;
 
 import org.junit.Test;
 import study.jvm.classloading.loading.MyClassLoader;
