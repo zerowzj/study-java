@@ -1,7 +1,6 @@
 package study.jvm.classloading.loading;
 
 import org.junit.Test;
-import study.jvm.classloading.loading.MyClassLoader;
 
 import java.lang.reflect.Method;
 
