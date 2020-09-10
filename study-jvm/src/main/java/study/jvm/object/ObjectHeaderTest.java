@@ -7,17 +7,27 @@ import org.openjdk.jol.info.ClassLayout;
 @Slf4j
 public class ObjectHeaderTest {
 
+    public Object lock = new Object();
+
     @Test
     public void obj_test() {
-        Obj obj = new Obj();
-        String str = ClassLayout.parseInstance(obj)
+        String str = ClassLayout.parseInstance(lock)
+                .toPrintable();
+        log.info(str);
+        synchronized (lock) {
+            str = ClassLayout.parseInstance(lock)
+                    .toPrintable();
+            log.info(str);
+        }
+
+        str = ClassLayout.parseInstance(lock)
                 .toPrintable();
         log.info(str);
     }
 
     @Test
     public void array_test() {
-        Obj[] array = new Obj[]{new Obj(), new Obj(), new Obj()};
+        Obj[] array = new Obj[]{new Obj(), new Obj()};
         String str = ClassLayout.parseInstance(array).toPrintable();
         log.info(str);
     }
