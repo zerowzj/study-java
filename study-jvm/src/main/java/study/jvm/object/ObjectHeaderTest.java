@@ -31,4 +31,10 @@ public class ObjectHeaderTest {
         String str = ClassLayout.parseInstance(array).toPrintable();
         log.info(str);
     }
+
+    public static void main(String[] args) throws Exception {
+        Thread.sleep(5000);
+        Obj obj = new Obj();
+        log.info(ClassLayout.parseInstance(obj).toPrintable());
+    }
 }
