@@ -22,6 +22,7 @@ public class MarkWordTest {
     public void biasedLock_test() {
         Obj obj = new Obj();
         log.info(ClassLayout.parseInstance(obj).toPrintable());
+
         synchronized (obj) {
             log.info(ClassLayout.parseInstance(obj).toPrintable());
         }
@@ -33,12 +34,9 @@ public class MarkWordTest {
         Obj obj = new Obj();
         log.info(ClassLayout.parseInstance(obj).toPrintable());
 
-        log.info(ClassLayout.parseInstance(obj).toPrintable());
-//        synchronized (obj) {
-//            layout = ClassLayout.parseInstance(obj)
-//                    .toPrintable();
-//            log.info(layout);
-//        }
+        synchronized (obj) {
+            log.info(ClassLayout.parseInstance(obj).toPrintable());
+        }
     }
 
     //级锁
