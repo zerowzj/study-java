@@ -9,9 +9,7 @@ public class JvmTest {
 
     @Test
     public void detail_test(){
-
-        log.info(VM.current().details());
-        log.info("{}", VM.current().objectHeaderSize());
-        log.info("{}", VM.current().objectAlignment());
+        System.out.println(VM.current().details());
+        log.info("header_size= {}bytes", VM.current().objectHeaderSize());
     }
 }

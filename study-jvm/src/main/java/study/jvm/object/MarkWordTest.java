@@ -3,34 +3,36 @@ package study.jvm.object;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
+import study.jvm.HashUtils;
 
 @Slf4j
 public class MarkWordTest {
 
     //无锁
     @Test
-    public void test() {
+    public void noLock_test() {
         Obj obj = new Obj();
-        log.info(ClassLayout.parseInstance(obj).toPrintable());
+        System.out.println(ClassLayout.parseInstance(obj).toPrintable());
 
-        obj.hashCode();
-        log.info(ClassLayout.parseInstance(obj).toPrintable());
+        String hashCode = Integer.toHexString(obj.hashCode());
+        System.out.println(ClassLayout.parseInstance(obj).toPrintable());
+        log.info("hash_code= {}", hashCode);
     }
 
     //偏向锁
     @Test
     public void biasedLock_test() {
         Obj obj = new Obj();
-        log.info(ClassLayout.parseInstance(obj).toPrintable());
+        System.out.println(ClassLayout.parseInstance(obj).toPrintable());
 
-        synchronized (obj) {
-            log.info(ClassLayout.parseInstance(obj).toPrintable());
-        }
+//        synchronized (obj) {
+//            log.info(ClassLayout.parseInstance(obj).toPrintable());
+//        }
     }
 
     //轻量级锁
     @Test
-    public void light_test() {
+    public void lightLock_test() {
         Obj obj = new Obj();
         log.info(ClassLayout.parseInstance(obj).toPrintable());
 
@@ -41,7 +43,7 @@ public class MarkWordTest {
 
     //级锁
     @Test
-    public void heavy_test() {
+    public void heavyLock_test() {
         Obj obj = new Obj();
         log.info(ClassLayout.parseInstance(obj).toPrintable());
 
