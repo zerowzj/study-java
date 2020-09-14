@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 @Slf4j
 public class HashUtils {
 
-    public static void hashCode(Object obj) throws Exception {
+    public static String hashCode(Object obj) throws Exception {
         Field field = Unsafe.class.getDeclaredField("theUnsafe");
         field.setAccessible(true);
         Unsafe unsafe = (Unsafe) field.get(null);
@@ -18,5 +18,6 @@ public class HashUtils {
         }
         String code = Long.toHexString(hashCode);
         log.info("util  0x====" + code);
+        return code;
     }
 }

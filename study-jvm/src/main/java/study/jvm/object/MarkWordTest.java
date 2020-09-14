@@ -3,22 +3,23 @@ package study.jvm.object;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
+import study.jvm.HashUtils;
 
-/**
- * 关闭指针压缩：-XX:-UseCompressedOops
- */
+
 @Slf4j
 public class MarkWordTest {
 
     //无锁
     @Test
-    public void noLock_test() {
+    public void noLock_test() throws Exception{
         Obj obj = new Obj();
-        System.out.println(ClassLayout.parseInstance(obj).toPrintable());
+        ClassLayout classLayout= ClassLayout.parseInstance(obj);
+        //System.out.println(ClassLayout.parseInstance(obj).toPrintable());
 
-        String hashCode = Integer.toHexString(obj.hashCode());
-        System.out.println(ClassLayout.parseInstance(obj).toPrintable());
+        String hashCode = Long.toHexString(obj.hashCode());
+        System.out.println(classLayout.toPrintable());
         log.info("hash_code= {}", hashCode);
+        log.info("hash_code= {}", HashUtils.hashCode(obj));
     }
 
     //偏向锁

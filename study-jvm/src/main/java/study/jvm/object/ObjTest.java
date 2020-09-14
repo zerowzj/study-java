@@ -12,9 +12,9 @@ public class ObjTest {
     public void object_test() {
         Obj obj = new Obj();
         ClassLayout classLayout = ClassLayout.parseInstance(obj);
-        long headSize = classLayout.headerSize();
+        long headerSize = classLayout.headerSize();
 
-        log.info("head_size= {}", headSize);
+        log.info("head_size= {}", headerSize);
         log.info("{}", classLayout.toPrintable());
     }
 
