@@ -3,8 +3,10 @@ package study.jvm.object;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
-import study.jvm.HashUtils;
 
+/**
+ * 关闭指针压缩：-XX:-UseCompressedOops
+ */
 @Slf4j
 public class MarkWordTest {
 
@@ -41,7 +43,7 @@ public class MarkWordTest {
         }
     }
 
-    //级锁
+    //重量级锁
     @Test
     public void heavyLock_test() {
         Obj obj = new Obj();
