@@ -8,7 +8,7 @@ import java.util.List;
 public class PermTest {
 
     /**
-     * VM options: -XX:MaxMetaspaceSize=512K
+     * VM options: -XX:MaxMetaspaceSize=2M
      */
     @Test
     public void oom_test() {
