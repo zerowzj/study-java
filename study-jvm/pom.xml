@@ -87,7 +87,6 @@
                         <argument>arg1</argument>
                     </arguments>
                 </configuration>
-
                 <executions>
                     <execution>
                         <phase>package</phase>

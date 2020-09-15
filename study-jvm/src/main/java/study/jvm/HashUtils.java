@@ -17,7 +17,7 @@ public class HashUtils {
             hashCode |= (unsafe.getByte(obj, index) & 0xFF) << ((index - 1) * 8);
         }
         String code = Long.toHexString(hashCode);
-        log.info("util  0x====" + code);
+        //log.info("util  0x====" + code);
         return code;
     }
 }
