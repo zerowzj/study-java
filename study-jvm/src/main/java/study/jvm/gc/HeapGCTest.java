@@ -20,4 +20,20 @@ public class HeapGCTest {
             data.add(new HeapObject());
         }
     }
+
+    /**
+     * VM options：
+     * -Xms30M -Xmx30M -XX:NewRatio=1:1 -XX:SurvivorRatio=5:2:3 -XX:+PrintGCDetails
+     * -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails
+     */
+    @Test
+    public void gc_test() {
+        List<HeapObject> data = new ArrayList<>();
+
+        int i = 0;
+        while (true) {
+            log.info("{}", i++);
+            data.add(new HeapObject());
+        }
+    }
 }
