@@ -19,6 +19,8 @@ public class HeapOptionsTest {
      * -Xms40M -Xmx40M -XX:NewRatio=1 -XX:+PrintGCDetails
      *
      * -Xms40M -Xmx40M -Xmn10M -XX:SurvivorRatio=3 -XX:+PrintGCDetails
+     *
+     * -Xms40M -Xmx40M -Xmn10M -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath
      */
     @Test
     public void gc_test() {
