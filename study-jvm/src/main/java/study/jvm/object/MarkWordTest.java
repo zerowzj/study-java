@@ -3,7 +3,6 @@ package study.jvm.object;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
-import study.jvm.HashUtils;
 
 
 @Slf4j
@@ -19,7 +18,6 @@ public class MarkWordTest {
         String hashCode = Long.toHexString(obj.hashCode());
         System.out.println(classLayout.toPrintable());
         log.info("hash_code= {}", hashCode);
-        log.info("hash_code= {}", HashUtils.hashCode(obj));
     }
 
     //偏向锁
