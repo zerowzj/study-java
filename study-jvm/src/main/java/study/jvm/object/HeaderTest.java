@@ -8,7 +8,7 @@ import org.openjdk.jol.info.ClassLayout;
  * 关闭指针压缩：-XX:-UseCompressedOops
  */
 @Slf4j
-public class ObjectHeaderTest {
+public class HeaderTest {
 
     @Test
     public void test() {
