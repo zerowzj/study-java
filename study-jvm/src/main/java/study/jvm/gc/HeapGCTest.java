@@ -11,7 +11,8 @@ import java.util.List;
 public class HeapGCTest {
 
     /**
-     * VM options：-Xms1m -Xmx1m -XX:+HeapDumpOnOutOfMemoryError
+     * VM options：
+     * -Xms1m -Xmx1m -XX:+HeapDumpOnOutOfMemoryError
      */
     @Test
     public void oom_test() {
@@ -23,8 +24,12 @@ public class HeapGCTest {
 
     /**
      * VM options：
-     * -Xms30M -Xmx30M -XX:NewRatio=1:1 -XX:SurvivorRatio=5:2:3 -XX:+PrintGCDetails
      * -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails
+     * -Xms30M -Xmx30M -Xmn10M -XX:+PrintGCDetails
+     * -Xms40M -Xmx40M -Xmn10M -XX:+PrintGCDetails
+     *
+     * -Xms20M -Xmx20M -XX:NewRatio=1 -XX:+PrintGCDetails
+     * -Xms40M -Xmx40M -XX:NewRatio=1 -XX:+PrintGCDetails
      */
     @Test
     public void gc_test() {
@@ -32,7 +37,7 @@ public class HeapGCTest {
 
         int i = 0;
         while (true) {
-            log.info("{}", i++);
+            //log.info("{}", i++);
             data.add(new HeapObject());
         }
     }
