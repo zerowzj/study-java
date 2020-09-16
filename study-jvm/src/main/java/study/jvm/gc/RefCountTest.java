@@ -10,6 +10,9 @@ public class RefCountTest {
 
     private byte[] bigSize = new byte[2 * _1MB];
 
+    /**
+     * VM options: -XX:+PrintGCDetails -XX:+PrintGCTimeStamps
+     */
     @Test
     public void test(){
         RefCountTest objA  = new RefCountTest();

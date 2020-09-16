@@ -4,12 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 
-/**
- * 关闭指针压缩：-XX:-UseCompressedOops
- */
+
 @Slf4j
 public class HeaderTest {
 
+    /**
+     * 关闭指针压缩：-XX:-UseCompressedOops
+     */
     @Test
     public void test() {
         Obj obj = new Obj();
