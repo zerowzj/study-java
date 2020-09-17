@@ -35,17 +35,31 @@ public class HeapOptionsTest {
     }
 
     /**
+     * 对象优先在Eden区分配
      * VM options：
      * -Xms20M -Xmx20M -Xmn10M -XX:SurvivorRatio=8 -XX:+PrintGCDetails
      */
     @Test
     public void test() {
-        byte[] allocation1, allocation2, allocation3, allocation4;
-        allocation1 = new byte[2 * _1MB];
-        allocation2 = new byte[2 * _1MB];
-        //allocation3 = new byte[2 * _1MB];
-        //allocation4 = new byte[2 * _1MB];
+        byte[] b1, b2, b3, b4;
+        b1 = new byte[2 * _1MB];
+        //b2 = new byte[2 * _1MB];
+        //b3 = new byte[2 * _1MB];
+
         //出现一次minor GC
-        //allocation4 = new byte[4 * _1MB];
+        // b4 = new byte[4 * _1MB];
+    }
+
+    /**
+     * 大对象直接进入老年代
+     * VM options：
+     * -Xms20M -Xmx20M -Xmn10M -XX:SurvivorRatio=8 -XX:+PrintGCDetails -XX:PretenureSizeThreshold=6145728
+     */
+    @Test
+    public void PretenureSizeThreshold_test() {
+        byte[] b = new byte[4 * _1MB];
+        byte[] b2 = new byte[4 * _1MB];
+        byte[] b3 = new byte[3 * _1MB];
+        //System.gc();
     }
 }
